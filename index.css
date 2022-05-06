@@ -1,0 +1,43 @@
+tr,
+td {
+    border: 3px solid black;
+}
+
+table {
+    border-spacing: 5px;
+    margin: 0 auto;
+}
+
+h1 {
+
+    margin-left: 5%;
+}
+
+td div {
+    padding: 2em;
+}
+
+td {
+    margin: 1em;
+}
+
+#firstLine,
+#secondLine,
+#thirdLine {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5%;
+    column-gap: 1.5%;
+}
+
+div.key {
+    width: 50px;
+    height: 30px;
+    background: grey;
+    color: black;
+    text-align: center;
+}
+
+#thirdLine {
+    margin-left: 3%;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript" src="array.js"></script>
+<script type="text/javascript">
+    let num = parseInt((Math.random() * array.length))
+    const palabra = (getArray()[num]);
+    console.log(palabra)
+
+    function to_array(word) {
+        var palabra_array = new Array(5);
+        for (var i = 0; i < word.length; i++) {
+            palabra_array[i] = word.charAt(i);
+        }
+        return palabra_array;
+    }
+
+    function adivinarPalabra(palabraAadivinar) {
+        let contadorIntentos = 0;
+        while (contadorIntentos < 5) {
+            let contadorVerdes = 0;
+            let contadorAmarillas = 0;
+            let intento = prompt('PALABRA :' + (contadorIntentos + 1),);
+            intento = to_array(intento.toUpperCase());
+
+            // for (var i = 0; i < palabraAadivinar.length; i++) {
+            //     if (palabraAadivinar.indexOf(intento[i]) === -1) {
+            //         console.log(intento[i] + '---> GRIS');
+            //     } else {
+            //         if (palabraAadivinar[i] === intento[i]) {
+            //             console.log(intento[i] + '---> VERDE');
+            //         } else {
+            //             // if (palabraAadivinar.indexOf(intento[i+1],i+1) === -1) {
+            //                 console.log(intento[i] + '---> AMARILLO');
+            //             //}
+            //             // } else {
+            //             //     console.log(intento[i] + '---> GRIS');
+            //             // }
+
+            //         }
+            //     }
+            // }
+            for (var i = 0; i < palabraAadivinar.length; i++) {
+                if (palabraAadivinar[i] == intento[i]) {
+                    console.log(intento[i] + '---> VERDE');
+                } else if (palabraAadivinar.includes(intento[i])) {
+                    if (palabraAadivinar.includes(intento[i])) {
+                        console.log(intento[i] + '---> GRIS');
+                    } else {
+                        console.log(intento[i] + '---> AMARILLO');
+                    }
+                }else {
+                    console.log(intento[i] + '---> GRIS');
+                }
+            }
+            console.log('======');
+            contadorIntentos++;
+        }
+
+    }
+
+
+    // console.log(adivinarPalabra(to_array(palabra.toLocaleUpperCase())));
+    console.log(adivinarPalabra(to_array('valsa'.toUpperCase())));
+</script>
+
+<body>
+
+</body>
+
+</html>
